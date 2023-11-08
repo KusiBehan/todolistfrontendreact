@@ -1,4 +1,4 @@
-# ReactCICD
+# CICDReact
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/kusibehan12/reactcicd.git
+git remote add origin https://gitlab.com/kusi_fernandez_sch-le/cicdreact.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/kusibehan12/reactcicd/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/kusi_fernandez_sch-le/cicdreact/-/settings/integrations)
 
 ## Collaborate with your team
 

@@ -1,0 +1,19 @@
+$background-color: #ffffff;
+$text-color: #414856;
+$check-color: #4f29f0;
+$disabled-color: #c3c8de;
+$border-radius: 10px;
+
+.UpdateListBtn {
+  background: $check-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  padding: 10px 20px;
+  float: right;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: darken($check-color, 10%); // Darken the color on hover
+  }
+}
