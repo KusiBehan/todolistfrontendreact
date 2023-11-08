@@ -1,5 +1,6 @@
 stages:
-  - test
+- test
+- build
 
 unit-test:
   image: node:latest
@@ -16,3 +17,9 @@ unit-test:
     reports:
       junit:
         - junit.xml
+buid project:
+  stage: build
+  image: node:latest
+  script:
+    - npm install
+    - npm run build
