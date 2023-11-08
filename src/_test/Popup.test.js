@@ -1,5 +1,6 @@
 import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
+import { BuildRequestBody } from "../components/Popup/requestUtils";
 import Popup from "../components/Popup/Popup";
 import "@testing-library/jest-dom";
 
@@ -63,5 +64,32 @@ describe("Popup Component", () => {
       const popupContainer = screen.getByTestId("bodypopup");
       expect(popupContainer).toBeInTheDocument();
     });
+  });
+});
+describe("BuildRequestBody function", () => {
+  it("should build a request body with incremented ID", () => {
+    const lastID = "5"; // Provide a sample lastID
+    const task = "Test Task";
+    const expectedData = {
+      id: "6",
+      task: "Test Task",
+      status: true,
+    };
+
+    const result = BuildRequestBody(lastID, task);
+
+    expect(result).toEqual(expectedData);
+  });
+
+  it("should handle edge cases with lastID", () => {
+    const lastID = "NaN"; // An edge case where lastID is not a valid integer
+    const task = "Test Task";
+    const expectedData = {
+      id: "NaN",
+      task: "Test Task",
+      status: true,
+    };
+    const result = BuildRequestBody(lastID, task);
+    expect(result).toEqual(expectedData);
   });
 });
