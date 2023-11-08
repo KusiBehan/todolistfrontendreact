@@ -1,6 +1,7 @@
 import React from "react";
-import { render, fireEvent, act } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import Popup from "../components/Popup/Popup";
+import "@testing-library/jest-dom";
 
 describe("Popup Component", () => {
   it("renders the popup with input and buttons", async () => {
@@ -44,5 +45,23 @@ describe("Popup Component", () => {
     fireEvent.click(closeButton);
 
     expect(closePopupMock).toHaveBeenCalled();
+  });
+
+  describe("Popup Component", () => {
+    it('renders the div with class "popup-container"', () => {
+      const closePopup = jest.fn();
+      render(<Popup closePopup={closePopup} />);
+      const popupContainer = screen.getByTestId("popupcnt");
+      expect(popupContainer).toBeInTheDocument();
+    });
+  });
+
+  describe("Popup Component", () => {
+    it('renders the div with class "popup-container"', () => {
+      const closePopup = jest.fn();
+      render(<Popup closePopup={closePopup} />);
+      const popupContainer = screen.getByTestId("bodypopup");
+      expect(popupContainer).toBeInTheDocument();
+    });
   });
 });

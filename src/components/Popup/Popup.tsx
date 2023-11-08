@@ -58,8 +58,8 @@ const Popup: React.FC<{ closePopup: () => void }> = ({ closePopup }) => {
   };
 
   return (
-    <div className="popup-container">
-      <div className="popup-body">
+    <div className="popup-container" data-testid="popupcnt">
+      <div className="popup-body"  data-testid="bodypopup">
         <input
           className="TaskName"
           name="message"
