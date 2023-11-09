@@ -82,7 +82,7 @@ describe("BuildRequestBody function", () => {
   });
 
   it("should handle edge cases with lastID", () => {
-    const lastID = "NaN"; // An edge case where lastID is not a valid integer
+    const lastID = "NaN";
     const task = "Test Task";
     const expectedData = {
       id: "NaN",
